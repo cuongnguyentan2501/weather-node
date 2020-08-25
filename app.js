@@ -4,6 +4,7 @@ const app=express()
 const hbs=require('hbs')
 const request=require("request")
 const fs=require("fs")
+const PORT=process.env.PORT || 3000
 // Tro den thu muc public , moi duong dan trong templace deu xuat phat tu day
 const publicPath=path.join(__dirname,"/public")
 app.use(express.static(publicPath))
@@ -78,7 +79,7 @@ app.get("/*",(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("server running")
+app.listen(PORT,()=>{
+    console.log("server running on "+PORT)
 });
 
